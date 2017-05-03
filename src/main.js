@@ -7,7 +7,6 @@ import about from './components/about'
 import resume from './components/resume'
 import studioC from './components/studioC'
 import contact from './components/contact'
-import todo from './components/todo'
 import ads from './components/ads'
 
 
@@ -21,7 +20,6 @@ const router = new VueRouter({
     {path: '/resume', component: resume},
     {path: '/studioC', component: studioC},
     {path: '/contact', component: contact},
-    {path: '/todo', component: todo},
     {path: '/ads', component: ads}
   ]
 });
@@ -30,13 +28,16 @@ new Vue({
 router, 
 template: `
   <div id="app">
-    <h1>Jonny Vance</h1>
+    <router-link to="/" id="name">
+       <h1>jonny vance</h1>
+    </router-link>
+    <nav>
       <router-link to="/">about</router-link>
       <router-link to="/ads">ads</router-link>
       <router-link to="/studioC">studio c</router-link>    
       <router-link to="/resume">resume</router-link>  
       <router-link to="/contact">contact</router-link>
-      <router-link to="/todo">to do</router-link>             
+    </nav>         
       <hr />
     <router-view class="view"></router-view>
   </div>
